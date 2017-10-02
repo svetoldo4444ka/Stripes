@@ -1,5 +1,11 @@
 @import '../images/sprite/icons';
 
+#wrapper {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    overflow: hidden;
+}
 #header {
     padding: 21px 0 11px;
     background: rgba(255,255,255,0.73);
@@ -125,12 +131,9 @@
 }
 #content {
     padding: 0 0 45px;
+    flex: 1;
 }
 #footer {
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    right: 0;
     padding: 0 0 8px;
     .box {
         padding-top: 8px;

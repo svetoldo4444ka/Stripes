@@ -3,16 +3,12 @@ footer,
 section,
 article,
 figure {display: block;}
-html,body {
-   height: 100%;
-}
 body {
     -webkit-text-size-adjust: 100%;
     background: $gray-light url('../images/bg-main.jpg');
     margin: 0;
     font:  #{$main-font-size}/#{$main-line-height} $main-font-family;
     color: $gray-dark;
-    min-height: 100%;
     min-width: 320px;
     @media screen and (max-width: $mobile-width) {
         font-size: $main-font-size - 2px;
