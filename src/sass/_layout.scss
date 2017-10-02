@@ -1,0 +1,168 @@
+@import '../images/sprite/icons';
+
+#header {
+    padding: 21px 0 11px;
+    background: rgba(255,255,255,0.73);
+    @media screen and (max-width: $tablet-width) {
+        padding: 22px 0 5px;
+    }
+    @media screen and (max-width: $mobile-width) {
+        background: none;
+        padding: 0;
+    }
+    .logo-container {
+        @media screen and (max-width: $mobile-width) {
+            background: rgba(255,255,255,0.73);
+            margin: 0 -10px;
+            padding: 7px 10px 6px;
+        }
+    }
+    .logo {
+        font: #{$large-font-size}/#{$large-line-height} $title-font-family;
+        margin: 0 0 6px;
+        @include sprite($logo);
+        @include cleartext;
+        @media screen and (max-width: $mobile-width) {
+            @include sprite($logo-small);
+            margin: 0 0 2px;
+        }
+        a {
+            color: $black;
+            height: 100%;
+            display: block;
+            text-decoration: none;
+        }
+        span {
+            color: $green;
+        }
+    }
+}
+#nav {
+    max-width: 80%;
+    font: #{$main-font-size}/#{$main-line-height - 5} $title-font-family;
+    @media screen and (max-width: $mobile-width) {
+        max-width: 100%;
+    }
+    h2 {
+        @include accessibility;
+    }
+    ul {
+        @include resetList(0,2px 3px);
+        display: flex;
+        text-transform: uppercase;
+        @media screen and (max-width: $mobile-width) {
+            flex-direction: column;
+            padding: 24px 0 0;
+        }
+        li {
+            margin: 0 0 15px 26px;
+            position: relative;
+            @media screen and (max-width: $tablet-width) {
+                margin: 0 0 15px;
+                padding: 0 12px;
+            }
+            @media screen and (max-width: $mobile-width) {
+                border-bottom: 3px solid $gray-dark;
+                padding: 4px 0 7px;
+                margin: 0;
+            }
+            &:before {
+                position: absolute;
+                content: '/';
+                top: 0;
+                left: -16px;
+                @media screen and (max-width: $tablet-width) {
+                    left: -3px;
+                }
+                @media screen and (max-width: $mobile-width) {
+                    content: '';
+                    height: 1px;
+                    background: $white;
+                    left: 0;
+                    right: 0;
+                    top: auto;
+                    bottom: -4px;
+                }
+            }
+            &:first-child {
+                &:before {
+                    content: '';
+                }
+            }
+            &.active {
+                border-color: $green;
+                a {
+                    color: $green;
+                }
+                &:after {
+                    position: absolute;
+                    width: 0;
+                    height: 0;
+                    border-left: 8px solid transparent;
+                    border-right: 8px solid transparent;
+                    border-top: 6px solid $green;
+                    bottom: -8px;
+                    left: 50%;
+                    margin: 0 0 0 -8px;
+                    content: '';
+                    @media screen and (max-width: $mobile-width) {
+                        display: none;
+                    }
+                }
+            }
+        }
+        a {
+            color: $gray-dark;
+            text-decoration: none;
+            @media screen and (max-width: $mobile-width) {
+                padding: 0;
+            }
+            &:hover {
+                color: $green;
+            }
+        }
+    }
+}
+#content {
+    padding: 0 0 45px;
+}
+#footer {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    padding: 0 0 8px;
+    .box {
+        padding-top: 8px;
+        position: relative;
+        @media screen and (max-width: $mobile-width) {
+            align-items: center;
+        }
+        &:before {
+            left: 8px;
+            right: 8px;
+            position: absolute;
+            background: $gray-lighter;
+            content: '';
+            top: 0;
+            height: 1px;
+        }
+        &:after {
+            left: 8px;
+            right: 8px;
+            position: absolute;
+            background: $white;
+            content: '';
+            top: 1px;
+            height: 1px;
+        }
+    }
+    .copyright {
+        color: $gray-middle;
+        font: #{$small-font-size}/#{$small-line-height} $base-font-family;
+        margin: 0 0 10px;
+        @media screen and (max-width: $tablet-width) {
+            display: none;
+        }
+    }
+}

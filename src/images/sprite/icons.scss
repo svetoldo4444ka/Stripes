@@ -1,0 +1,167 @@
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+$facebook-name: 'facebook';
+$facebook-x: 34px;
+$facebook-y: 62px;
+$facebook-offset-x: -34px;
+$facebook-offset-y: -62px;
+$facebook-width: 24px;
+$facebook-height: 25px;
+$facebook-total-width: 129px;
+$facebook-total-height: 126px;
+$facebook-image: 'icons.png';
+$facebook: (34px, 62px, -34px, -62px, 24px, 25px, 129px, 126px, 'icons.png', 'facebook', );
+$ico-round-name: 'ico-round';
+$ico-round-x: 0px;
+$ico-round-y: 102px;
+$ico-round-offset-x: 0px;
+$ico-round-offset-y: -102px;
+$ico-round-width: 24px;
+$ico-round-height: 24px;
+$ico-round-total-width: 129px;
+$ico-round-total-height: 126px;
+$ico-round-image: 'icons.png';
+$ico-round: (0px, 102px, 0px, -102px, 24px, 24px, 129px, 126px, 'icons.png', 'ico-round', );
+$ico-screen-name: 'ico-screen';
+$ico-screen-x: 34px;
+$ico-screen-y: 102px;
+$ico-screen-offset-x: -34px;
+$ico-screen-offset-y: -102px;
+$ico-screen-width: 24px;
+$ico-screen-height: 24px;
+$ico-screen-total-width: 129px;
+$ico-screen-total-height: 126px;
+$ico-screen-image: 'icons.png';
+$ico-screen: (34px, 102px, -34px, -102px, 24px, 24px, 129px, 126px, 'icons.png', 'ico-screen', );
+$ico-vial-name: 'ico-vial';
+$ico-vial-x: 0px;
+$ico-vial-y: 62px;
+$ico-vial-offset-x: 0px;
+$ico-vial-offset-y: -62px;
+$ico-vial-width: 24px;
+$ico-vial-height: 30px;
+$ico-vial-total-width: 129px;
+$ico-vial-total-height: 126px;
+$ico-vial-image: 'icons.png';
+$ico-vial: (0px, 62px, 0px, -62px, 24px, 30px, 129px, 126px, 'icons.png', 'ico-vial', );
+$logo-small-name: 'logo-small';
+$logo-small-x: 0px;
+$logo-small-y: 34px;
+$logo-small-offset-x: 0px;
+$logo-small-offset-y: -34px;
+$logo-small-width: 95px;
+$logo-small-height: 18px;
+$logo-small-total-width: 129px;
+$logo-small-total-height: 126px;
+$logo-small-image: 'icons.png';
+$logo-small: (0px, 34px, 0px, -34px, 95px, 18px, 129px, 126px, 'icons.png', 'logo-small', );
+$logo-name: 'logo';
+$logo-x: 0px;
+$logo-y: 0px;
+$logo-offset-x: 0px;
+$logo-offset-y: 0px;
+$logo-width: 129px;
+$logo-height: 24px;
+$logo-total-width: 129px;
+$logo-total-height: 126px;
+$logo-image: 'icons.png';
+$logo: (0px, 0px, 0px, 0px, 129px, 24px, 129px, 126px, 'icons.png', 'logo', );
+$rss-name: 'rss';
+$rss-x: 68px;
+$rss-y: 62px;
+$rss-offset-x: -68px;
+$rss-offset-y: -62px;
+$rss-width: 24px;
+$rss-height: 25px;
+$rss-total-width: 129px;
+$rss-total-height: 126px;
+$rss-image: 'icons.png';
+$rss: (68px, 62px, -68px, -62px, 24px, 25px, 129px, 126px, 'icons.png', 'rss', );
+$twitter-name: 'twitter';
+$twitter-x: 102px;
+$twitter-y: 62px;
+$twitter-offset-x: -102px;
+$twitter-offset-y: -62px;
+$twitter-width: 24px;
+$twitter-height: 25px;
+$twitter-total-width: 129px;
+$twitter-total-height: 126px;
+$twitter-image: 'icons.png';
+$twitter: (102px, 62px, -102px, -62px, 24px, 25px, 129px, 126px, 'icons.png', 'twitter', );
+$spritesheet-width: 129px;
+$spritesheet-height: 126px;
+$spritesheet-image: 'icons.png';
+$spritesheet-sprites: ($facebook, $ico-round, $ico-screen, $ico-vial, $logo-small, $logo, $rss, $twitter, );
+$spritesheet: (129px, 126px, 'icons.png', $spritesheet-sprites, );
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(../images/sprite/#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

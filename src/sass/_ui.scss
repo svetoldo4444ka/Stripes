@@ -1,0 +1,106 @@
+@import '../images/sprite/icons';
+.container {
+    max-width: $max-width;
+    padding: 0 10px;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+.box {
+    display: flex;
+    justify-content: space-between;
+    @media screen and (max-width: $tablet-width) {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    @media screen and (max-width: $mobile-width) {
+        align-items: stretch;
+        justify-content: flex-start;
+    }
+}
+h1 {
+    font: #{$middle-font-size}/#{$middle-line-height} $title-font-family;
+    color: $green;
+    margin: 0 0 12px;
+    @media screen and (max-width: $mobile-width) {
+        font-size: $main-font-size;
+        line-height: $main-line-height - 3px;
+        color: $black;
+        margin: 0 0 16px;
+    }
+}
+h2 {
+    font: #{$middle-font-size}/#{$middle-line-height - 3px} $title-font-family;
+    margin: 0 0 1px;
+    color: $gray-dark;
+    @media screen and (max-width: $mobile-width) {
+        font-size: $main-font-size + 5px;
+        line-height: $main-line-height - 3px;
+        margin: 0 0 21px;
+    }
+}
+p {
+    margin: 0 0 20px;
+    @media screen and (max-width: $mobile-width) {
+        margin: 0 0 22px;
+    }
+}
+.btn-more {
+    font: #{$main-font-size}/#{$main-line-height - 6px} $main-font-family;
+    background: $green;
+    color: $white;
+    height: 20px;
+    margin: 0 0 10px;
+    padding: 0 3px;
+    vertical-align: top;
+    display: inline-block;
+    @include btn;
+    text-decoration: none;
+    max-width: 100px;
+    &:hover {
+        color: $white;
+        text-decoration: underline;
+    }
+    @media screen and (max-width: $mobile-width) {
+        font-size: $main-font-size - 2px;
+    }
+}
+.green {
+    color: $green;
+}
+.social-list {
+    margin: 0;
+    padding: 0;
+    list-style:none;
+    li {
+        display: inline-block;
+        vertical-align: top;
+        margin: 0 0 0 8px;
+    }
+    a {
+        display: block;
+        @include cleartext;
+        position: relative;
+        &:hover:after {
+            background: $green;
+            position: absolute;
+            content: '';
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            z-index: -1;
+            margin: -10px 0 0 -10px;
+        }
+    }
+    .rss {
+        @include sprite($rss);
+    }
+    .facebook {
+        @include sprite($facebook);
+    }
+    .twitter {
+        @include sprite($twitter);
+    }
+}

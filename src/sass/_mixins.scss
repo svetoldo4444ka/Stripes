@@ -1,0 +1,30 @@
+@mixin clearfix {
+  clear: both;
+  content: "";
+  display: block;
+}
+@mixin cleartext {
+  text-indent: -9999px;
+  overflow: hidden;
+}
+@mixin resetList($margin: 0, $padding: 0, $list-style: none) {
+  margin: $margin;
+  padding: $padding;
+  list-style: $list-style;
+}
+@mixin accessibility {
+  left: -9999px;
+  position: absolute;
+  top: 0;
+}
+@mixin btn {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+@mixin imgReset {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+  vertical-align: top;
+}

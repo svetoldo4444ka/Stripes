@@ -1,0 +1,63 @@
+.info {
+    padding: 37px 0 12px;
+    @media screen and (max-width: $tablet-width) {
+        padding: 0 0 24px;
+    }
+    @media screen and (max-width: $mobile-width) {
+        padding: 0 0 19px;
+    }
+    h2 {
+        text-transform: uppercase;
+    }
+    .list {
+        @include resetList();
+        display: flex;
+        @media screen and (max-width: $tablet-width) {
+            flex-direction: column;
+        }
+    }
+    li {
+        text-align: center;
+        margin: 0 0 20px;
+        @media screen and (max-width: $tablet-width) {
+            margin: 34px 0 0;
+            &:first-child {
+                margin: 0;
+            }
+        }
+        @media screen and (max-width: $mobile-width) {
+            margin: 30px 0 0;
+            &:first-child {
+                margin: 0;
+            }
+        }
+    }
+    .ico-box {
+        min-height: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 0 10px;
+        @media screen and (max-width: $mobile-width) {
+            margin: 0 0 2px;
+        }
+    }
+    .round {
+        @include sprite($ico-round);
+    }
+    .vial {
+        @include sprite($ico-vial);
+    }
+    .screen {
+        @include sprite($ico-screen);
+    }
+    p {
+        margin: 0 0 7px;
+        @media screen and (max-width: $tablet-width) {
+            margin: 0 0 13px;
+        }
+        @media screen and (max-width: $mobile-width) {
+            margin: 0 0 11px;
+        }
+    }
+}
